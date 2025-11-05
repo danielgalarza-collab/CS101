@@ -18,6 +18,4 @@ int main() {
     }
 
     printf("\nPresiona Enter para salir...");
-    getchar();
-    return 0;
 }
