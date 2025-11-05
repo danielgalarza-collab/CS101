@@ -1,0 +1,53 @@
+
+x = 5 + 3
+
+When we write this line in Python, many things happen beneath the surface.
+
+High-level code (Python):
+The programmer writes an easy-to-read instruction like x = 5 + 3.
+
+Interpreter:
+Python’s interpreter translates this line into bytecode, a low-level set of instructions that the computer can understand.
+
+CPU and instructions:
+The CPU executes these instructions step by step.
+
+It loads the numbers 5 and 3 into its internal registers.
+
+It performs the addition using the ALU (Arithmetic Logic Unit).
+
+It stores the result (8) in memory under the variable x.
+
+Memory:
+The memory (RAM) temporarily holds the data (5, 3, and 8) and the program instructions while the CPU processes them.
+
+Instruction cycle (Fetch–Decode–Execute):
+For each instruction, the CPU:
+
+Fetches the next instruction from memory.
+
+Decodes it (understands what to do).
+
+Executes it (performs the operation).
+This happens millions of times per second.
+
+High-level vs. Low-level view:
+
+High-level: x = 5 + 3 (what we see).
+
+Low-level:
+
+LOAD R1, 5  
+LOAD R2, 3  
+ADD R3, R1, R2  
+STORE R3, x
+
+
+The low-level instructions are what the CPU actually executes.
+
+Summary:
+
+A simple Python line like x = 5 + 3 goes through several layers — from Python code, through the interpreter, into CPU instructions — and finally produces a result stored in memory.
+The CPU continuously repeats the fetch–decode–execute cycle to make programs run
+-gg
+--
