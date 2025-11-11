@@ -2,9 +2,8 @@
 #include <stdlib.h>
 #include <time.h>
 
-//-------------------------//
 //   Cola usando un array  //
-//-------------------------//
+
 
 #define MAX 100000 // tamaño máximo del array
 
