@@ -2,8 +2,8 @@
 #include <stdlib.h>
 #include <time.h>
 
-#define N1 10000
-#define N2 100000
+#define N1 100000
+#define N2 1000000
 
 int busqueda_lineal(int arr[], int n, int valor) {
     for (int i = 0; i < n; i++) {
@@ -37,35 +37,35 @@ int main() {
 
     int valor = N2; // buscar el último número
     clock_t inicio, fin;
-    double tiempo;
-
-    printf("Busqueda en arreglo de 10.000 elementos\n");
-
-    inicio = clock();
-    busqueda_lineal(a1, N1, valor);
-    fin = clock();
-    tiempo = (double)(fin - inicio) / CLOCKS_PER_SEC;
-    printf("Lineal: %.6f segundos\n", tiempo);
-
-    inicio = clock();
-    busqueda_binaria(a1, N1, valor);
-    fin = clock();
-    tiempo = (double)(fin - inicio) / CLOCKS_PER_SEC;
-    printf("Binaria: %.6f segundos\n\n", tiempo);
+    double tiempo_us;
 
     printf("Busqueda en arreglo de 100.000 elementos\n");
 
     inicio = clock();
+    busqueda_lineal(a1, N1, valor);
+    fin = clock();
+    tiempo_us = ((double)(fin - inicio) / CLOCKS_PER_SEC) * 1000000;
+    printf("Lineal: %.2f microsegundos\n", tiempo_us);
+
+    inicio = clock();
+    busqueda_binaria(a1, N1, valor);
+    fin = clock();
+    tiempo_us = ((double)(fin - inicio) / CLOCKS_PER_SEC) * 1000000;
+    printf("Binaria: %.2f microsegundos\n\n", tiempo_us);
+
+    printf("Busqueda en arreglo de 1.000.000 elementos\n");
+
+    inicio = clock();
     busqueda_lineal(a2, N2, valor);
     fin = clock();
-    tiempo = (double)(fin - inicio) / CLOCKS_PER_SEC;
-    printf("Lineal: %.6f segundos\n", tiempo);
+    tiempo_us = ((double)(fin - inicio) / CLOCKS_PER_SEC) * 1000000;
+    printf("Lineal: %.2f microsegundos\n", tiempo_us);
 
     inicio = clock();
     busqueda_binaria(a2, N2, valor);
     fin = clock();
-    tiempo = (double)(fin - inicio) / CLOCKS_PER_SEC;
-    printf("Binaria: %.6f segundos\n", tiempo);
+    tiempo_us = ((double)(fin - inicio) / CLOCKS_PER_SEC) * 1000000;
+    printf("Binaria: %.2f microsegundos\n", tiempo_us);
 
     free(a1);
     free(a2);
@@ -75,7 +75,7 @@ int main() {
     printf("- La busqueda binaria es mucho mas rapida porque va dividiendo a la mitad.\n");
     printf("- A mayor cantidad de datos, se nota mucho la diferencia.\n");
 
+    getchar();
+
     return 0;
 }
-
-//

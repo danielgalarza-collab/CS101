@@ -1,0 +1,16 @@
+{
+    "configurations": [
+        {
+            "name": "(Windows) Iniciar",
+            "type": "cppvsdbg",
+            "request": "launch",
+            "program": "Escriba el nombre del programa; por ejemplo, ${workspaceFolder}/a.exe.",
+            "args": [],
+            "stopAtEntry": false,
+            "cwd": "${fileDirname}",
+            "environment": [],
+            "console": "externalTerminal"
+        }
+    ],
+    "version": "2.0.0"
+}
